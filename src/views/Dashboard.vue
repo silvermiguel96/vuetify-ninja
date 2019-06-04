@@ -2,6 +2,18 @@
   <div class="Dashboard">
     <h1 class="subheading grey--text">Dashboard</h1>
     <v-container class="my-5">
+
+      <v-layout row class="my-5">
+        <v-btn small flat color="grey" @click="sortBy('title')">
+          <v-icon left small>folder</v-icon>
+          <span class="caption text-lowercase">By Project Name</span>
+        </v-btn>
+        <v-btn small flat color="grey" @click="sortBy('person')">
+          <v-icon left small>person</v-icon>
+          <span class="caption text-lowercase">By person</span>
+        </v-btn>
+      </v-layout>
+
       <v-card flat v-for="project in projects" :key="project.title">
         <v-layout row wrap :class="`pa-3 project ${project.status}`">
           <v-flex xs12 md6>
@@ -35,11 +47,16 @@ export default {
   data() {
     return {
       projects: [
-        { title: 'Design a new Website', person: 'The Net Ninja', due: '1st Jan 2019' ,status: 'completed'},
-        { title: 'Design a new Website', person: 'The Net Ninja', due: '1st Jan 2019' ,status: 'ongoing'},
-        { title: 'Design a new Website', person: 'The Net Ninja', due: '1st Jan 2019' ,status: 'overdue'},
-        { title: 'Design a new Website', person: 'The Net Ninja', due: '1st Jan 2019' ,status: 'ongoing'}
+        { title: 'Design a new Website', person: 'He Net Ninja', due: '1st Jan 2019' ,status: 'completed'},
+        { title: 'New Website', person: 'Ge Net Ninja', due: '1st Jan 2019' ,status: 'ongoing'},
+        { title: 'A new Website', person: 'The Net Ninja', due: '1st Jan 2019' ,status: 'overdue'},
+        { title: 'Design a new Website', person: 'Net Ninja', due: '1st Jan 2019' ,status: 'ongoing'}
       ]
+    }
+  },
+  methods: {
+    sortBy(prop) {
+      this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
     }
   }
 };
