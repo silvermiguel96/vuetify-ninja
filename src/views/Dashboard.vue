@@ -53,28 +53,36 @@ export default {
     return {
       projects: [
         {
-          title: "Design a new Website",
-          person: "He Net Ninja",
-          due: "1st Jan 2019",
-          status: "completed"
-        },
-        {
-          title: "New Website",
-          person: "Ge Net Ninja",
-          due: "1st Jan 2019",
-          status: "ongoing"
-        },
-        {
-          title: "A new Website",
+          title: "Design a new website",
           person: "The Net Ninja",
           due: "1st Jan 2019",
-          status: "overdue"
+          status: "ongoing",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!"
         },
         {
-          title: "Design a new Website",
-          person: "Net Ninja",
-          due: "1st Jan 2019",
-          status: "ongoing"
+          title: "Code up the homepage",
+          person: "Chun Li",
+          due: "10th Jan 2019",
+          status: "complete",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!"
+        },
+        {
+          title: "Design video thumbnails",
+          person: "Ryu",
+          due: "20th Dec 2018",
+          status: "complete",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!"
+        },
+        {
+          title: "Create a community forum",
+          person: "Gouken",
+          due: "20th Oct 2018",
+          status: "overdue",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!"
         }
       ]
     };
@@ -87,7 +95,7 @@ export default {
 };
 </script>
 <style>
-.project.completed {
+.project.complete {
   border-left: 4px solid #3cd1c2;
 }
 .project.ongoing {
@@ -96,7 +104,7 @@ export default {
 .project.overdue {
   border-left: 4px solid #f83e70;
 }
-.v-chip.completed {
+.v-chip.complete {
   background: #3cd1c2;
 }
 .v-chip.ongoing {
