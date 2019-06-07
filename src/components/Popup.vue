@@ -22,6 +22,7 @@
 </template>
 <script>
 import format from 'date-fns/format';
+import db from '@/fb'
 export default {
   data () {
     return {
@@ -29,14 +30,25 @@ export default {
       content: '',
       due: null,
       inputRules: [
-        v => v.lenght >=  3 || 'Minimum length is 3 characters'
+        v => v.length >=  3 || 'Minimum length is 3 characters'
       ]
     }
   },
   methods: {
     submit () {
        if (this.$refs.form.validate()){
-         console.log(this.title, this.content, this.due)
+        //  console.log(this.title, this.content, this.due)
+        const project  = {
+          title: this.title,
+          content: this.content,
+          due: format(this.due, 'Do MMM YYYY'),
+          person: 'The Net Ninja',
+          status: 'ongoing'
+        }
+
+        db.collection('projects').add(project).then(() => {
+          console.log('added to db')
+        })
        }
     }
   },
